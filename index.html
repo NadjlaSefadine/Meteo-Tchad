@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Météo Tchad - Prévisions météorologiques</title>
+    <meta name="description" content="Application météo pour les principales villes du Tchad. Prévisions sur 7 jours pour N'Djamena, Moundou, Sarh, Abéché et Mongo.">
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🌤️</text></svg>">
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <header class="header">
+            <h1 class="title">
+                <span class="icon">📍</span>
+                Météo Tchad
+            </h1>
+            <p class="subtitle">Prévisions météorologiques pour les principales villes du Tchad</p>
+        </header>
+
+        <!-- City Selector -->
+        <div class="city-selector-card">
+            <h2>Sélectionnez votre ville</h2>
+            <div class="selector-container">
+                <select id="citySelect" class="city-select">
+                    <option value="">Choisir une ville...</option>
+                    <option value="ndjamena">N'Djamena</option>
+                    <option value="moundou">Moundou</option>
+                    <option value="sarh">Sarh</option>
+                    <option value="abeche">Abéché</option>
+                    <option value="mongo">Mongo</option>
+                </select>
+                <button id="refreshBtn" class="refresh-btn" disabled>
+                    <span class="refresh-icon">🔄</span>
+                    Actualiser
+                </button>
+            </div>
+        </div>
+
+        <!-- Loading State -->
+        <div id="loading" class="loading hidden">
+            <div class="spinner"></div>
+            <span>Chargement des prévisions...</span>
+        </div>
+
+        <!-- Weather Forecast -->
+        <div id="weatherContainer" class="weather-container hidden">
+            <div class="forecast-header">
+                <h2 id="cityName">Prévisions pour</h2>
+                <p>Prévisions météo sur 7 jours</p>
+            </div>
+            <div id="forecastGrid" class="forecast-grid">
+                <!-- Weather cards will be inserted here -->
+            </div>
+        </div>
+
+        <!-- No Data State -->
+        <div id="noData" class="no-data">
+            <p>Sélectionnez une ville pour voir les prévisions météo</p>
+        </div>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <p>Application météo pour le Tchad - Données météorologiques simulées</p>
+            <p>Développé avec HTML, CSS et JavaScript</p>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
